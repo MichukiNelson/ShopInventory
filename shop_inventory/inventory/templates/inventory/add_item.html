@@ -1,0 +1,23 @@
+{% extends 'inventory/base.html' %}
+
+{% block header %}
+  <h2>Add an item.</h2>
+  <p>This page allows you to add new items that you want to store in the database.</p>
+  <p>Feel free to click on any of the links below to add a specific item.</p>
+
+{% endblock header %}
+
+{% block content %}
+  <h3>
+    <a href="{% url 'inventory:add_desktop' %}">Desktops</a>
+  </h3>
+  <h3>
+    <a href="{% url 'inventory:add_laptop' %}">Laptops</a>
+  </h3>
+  <h3>
+    <a href="{% url 'inventory:add_monitor' %}">Monitors</a>
+  </h3>
+  <h3>
+    <a href="{% url 'inventory:add_generic' %}">Generic item</a>
+  </h3>
+{% endblock content %}

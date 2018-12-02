@@ -1,0 +1,18 @@
+{% extends 'inventory/base.html' %}
+
+
+{% block header %}
+	<div class='jumbotron'>
+ 		<h1>Shop Inventory Managment.</h1>
+ 	</div>
+{% endblock header %}
+
+{% block content %}
+	<h2>
+ 		<a href="{% url 'inventory:add_item' %}">Create</a> and manage your inventory items with ease.
+ 	</h2>
+ 	<h2>
+ 		<a href="{% url 'inventory:inventory' %}">Track</a> realated product information about a specific device thats stored in our database.
+ 	</h2>
+
+{% endblock content %}

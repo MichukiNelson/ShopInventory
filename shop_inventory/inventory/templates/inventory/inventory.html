@@ -1,0 +1,20 @@
+{% extends 'inventory/base.html' %}
+
+{% block header %}
+  <h2>Please choose a category to view items from:</h2>
+{% endblock header %}
+
+{% block content %}
+  <h3>
+    <a href="{% url 'inventory:desktops' %}">Desktops</a>
+  </h3>
+  <h3>
+    <a href="{% url 'inventory:laptops' %}">Laptops</a>
+  </h3>
+  <h3>
+    <a href="{% url 'inventory:monitors' %}">Monitors</a>
+  </h3>
+  <h3>
+    <a href="{% url 'inventory:generic' %}">Generic item</a>
+  </h3>
+{% endblock content %}

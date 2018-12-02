@@ -1,0 +1,23 @@
+{% extends 'inventory/base.html' %}
+
+{% block content %}
+	<h2>Desktops</h2>
+  {% for desktop in desktops %}
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3>
+	 				{{ desktop }}
+					<small>
+	 				</small>
+	 			</h3>
+	 		</div>
+			<div class="panel-body">
+	 			{{ desktop.date_added|date:'M d, Y H:i' }} 
+				<a href="{% url 'inventory:edit_desktop' desktop.id %}">
+					edit desktop</a>
+	 		</div>
+	 	</div> <!-- panel -->
+ 	{% empty %}
+ 	  <li>No item has been added yet</li>
+ 	{% endfor %}
+{% endblock content %}

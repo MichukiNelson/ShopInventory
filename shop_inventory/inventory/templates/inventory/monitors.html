@@ -1,0 +1,23 @@
+{% extends 'inventory/base.html' %}
+
+{% block content %}
+  <h2>Monitors</h2>
+  {% for monitor in monitors %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>
+          {{ monitor }}
+          <small>
+          </small>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{ monitor.date_added|date:'M d, Y H:i' }}
+        <a href="{% url 'inventory:edit_laptop' monitor.id %}">
+          edit monitor</a>
+      </div>
+    </div> <!-- panel -->
+  {% empty %}
+    <li>No item has been added yet</li>
+  {% endfor %}
+{% endblock content %}

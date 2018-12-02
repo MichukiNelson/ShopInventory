@@ -1,0 +1,23 @@
+{% extends 'inventory/base.html' %}
+
+{% block content %}
+  <h2>Other Items</h2>
+  {% for generic in generics %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>
+          {{ generic }}
+          <small>
+          </small>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{ generic.date_added|date:'M d, Y H:i' }}
+        <a href="{% url 'inventory:edit_laptop' generic.id %}">
+          edit item</a>
+      </div>
+    </div> <!-- panel -->
+  {% empty %}
+    <li>No item has been added yet</li>
+  {% endfor %}
+{% endblock content %}
